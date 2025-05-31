@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'ownerkost' => [
+            'driver' => 'session',
+            'provider' => 'owner',
+        ],
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'owner' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\KostOwner::class,
         ],
 
         // 'users' => [
