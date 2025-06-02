@@ -62,16 +62,8 @@ class KostOwnerResource extends Resource
                     ->nullable()
                     ->maxLength(255)
                     ->placeholder('Enter the URL of the profile picture'),
-                TextInput::make('password')
-                    ->label('Password')
-                    ->password()
-                    ->required()
-                    ->minLength(8)
-                    ->maxLength(255)
-                    ->placeholder('Enter the password for the Kost owner account'),
             ]);
     }
-
     public static function table(Table $table): Table
     {
         return $table

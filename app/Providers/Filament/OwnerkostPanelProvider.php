@@ -14,6 +14,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Filament\Http\Middleware\AuthenticateSession;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Filament\Ownerkost\Pages\Auth\EditProfileOwner;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -27,11 +28,12 @@ class OwnerkostPanelProvider extends PanelProvider
             ->id('ownerkost')
             ->path('ownerkost')
             ->login()
+            ->spa()
             ->registration()
             ->passwordReset()
             ->emailVerification()
             ->profile(
-                EditProfile::class,
+                EditProfileOwner::class,
                 isSimple: false,
             )
             ->authGuard('ownerkost')
